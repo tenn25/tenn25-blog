@@ -94,6 +94,19 @@ module.exports = {
         purgeOnly: ['all.scss'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'post',
+        path: `${__dirname}/src/pages/blog`,
+      },
+    },
     `gatsby-plugin-netlify`,
   ],
 };
