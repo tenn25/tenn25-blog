@@ -65,11 +65,8 @@ export default ({ data }: PageProps) => {
           <GridRow background={true}>
             <HomepageContent center={true}>
               <img src={config.siteLogo} alt={config.siteTitle} />
-              <h1>
-                Hi. I am <br />
-                Majid Hajian
-              </h1>
-              <p>I write about Dart, Flutter, JavaScript, Angular, React, and ...</p>
+              <h1>tenn25 blog</h1>
+              <p>備忘録ブログ</p>
               <Link to="/contact">
                 <Button big={true}>
                   <svg
@@ -102,10 +99,7 @@ export default ({ data }: PageProps) => {
             <HomepageContent>
               <h2>About Me</h2>
               <p>
-                Though I am a results-driven softiware architect and developer by day who have
-                converted inactive designs to fully interactive, well-developed, accessible and
-                standards-based user interfaces. I am completely enthusiast and passionate about
-                Flutter/Dart and JavaScript world.
+                ITエンジニア。AWS,Azure,DevOps,SRE,ITIL,データベース,Nodejs,TypeScript。絵を描いたりアナログゲームを作ったりしてます。
               </p>
               <hr />
               <h2>Latest Blog</h2>
