@@ -6,7 +6,7 @@ export default {
   siteUrl: 'https://tenn25.com', // Domain of your site. No trailing slash!
   siteLanguage: 'ja', // Language Tag on <html> element
   siteBanner: '/assets/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
-  defaultBg: '/assets/bg.png', // default post background header
+  defaultBg: '/assets/bg.jpg', // default post background header
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
   siteDescription: 'tenn25備忘録ブログ', // Your site description
   author: 'Majid Hajian', // Author for schemaORGJSONLD
@@ -25,7 +25,7 @@ export default {
   // Settings for typography.ts
   headerFontFamily: 'Bitter',
   bodyFontFamily: 'Open Sans',
-  baseFontSize: '18px',
+  baseFontSize: '12px',
 
   // Social media
   siteFBAppID: '',
