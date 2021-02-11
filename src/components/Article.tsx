@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import { kebabCase } from 'lodash';
 import { Subline } from './Subline';
 
+// 記事一覧の本文
 const Post = styled.article`
   display: flex;
   flex-direction: column;
@@ -11,7 +12,8 @@ const Post = styled.article`
   margin-bottom: 3.5rem;
 `;
 
-const Title = styled.h2`
+// 記事一覧の記事名
+const Title = styled.h3`
   position: relative;
   text-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.15);
   margin-bottom: 0.75rem;

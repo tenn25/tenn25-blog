@@ -25,7 +25,7 @@ export default {
   // Settings for typography.ts
   headerFontFamily: 'Bitter',
   bodyFontFamily: 'Open Sans',
-  baseFontSize: '12px',
+  baseFontSize: '13px',
 
   // Social media
   siteFBAppID: '',

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { media } from '../utils/media';
 
+// 記事の表示領域
 export const Content = styled.div`
   box-shadow: 0 0.4rem 12rem ${(props) => props.theme.colors.grey.ultraLight};
   border-radius: 1rem;
@@ -28,6 +29,6 @@ export const Content = styled.div`
     padding: 3rem 3rem;
   }
   @media ${media.phone} {
-    padding: 2rem 1.5rem;
+    padding: 2rem 0.5rem;
   }
 `;
