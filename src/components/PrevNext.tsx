@@ -5,6 +5,7 @@ import { kebabCase } from 'lodash';
 
 import Post from '../models/Post';
 
+// 前後の記事への遷移リンク
 const Wrapper = styled.div`
   display: flex;
   margin: 6rem auto 0 auto;

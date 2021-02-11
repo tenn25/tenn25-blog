@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { media } from '../utils/media';
 
+// ブログ全体の余白
 export const Wrapper = styled.div<{ fullWidth?: boolean }>`
   display: flex;
   flex-direction: column;
@@ -11,6 +12,6 @@ export const Wrapper = styled.div<{ fullWidth?: boolean }>`
     padding: ${(props) => (props.fullWidth ? '0' : '0 3rem')};
   }
   @media ${media.phone} {
-    padding: ${(props) => (props.fullWidth ? '0' : '0 1rem')};
+    padding: ${(props) => (props.fullWidth ? '0' : '0 0.5rem')};
   }
 `;

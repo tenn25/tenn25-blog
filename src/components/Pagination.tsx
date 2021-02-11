@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 import { media } from '../utils/media';
 
+// ページ下部の記事遷移のコンポーネント
 export const PaginationContainer = styled.div`
   text-align: center;
   margin: 2rem;

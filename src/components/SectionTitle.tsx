@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// ブログ記事名など上部のセクションタイトル
 export const SectionTitle: any = styled.div<{ uppercase: boolean }>`
   font-size: ${(props) => props.theme.fontSize.big};
   text-transform: ${(props) => (props.uppercase ? 'uppercase' : 'normal')};

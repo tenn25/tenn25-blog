@@ -102,7 +102,7 @@ export default ({ data }: PageProps) => {
               <p> AWS,Azure,DevOps,SRE,ITIL,データベース,Nodejs,TypeScript</p>
               <p>絵を描いたりアナログゲームを作ったりしてます。</p>
               <hr />
-              <h2>最新記事</h2>
+              <h2>最新の備忘録</h2>
               {edges.map((post) => (
                 <Article
                   title={post.node.frontmatter.title}

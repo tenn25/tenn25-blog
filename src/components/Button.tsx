@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
+// リンクのボタン
 export const Button = styled.button<{ big: boolean }>`
   background: ${(props) => props.theme.colors.primary};
   border: none;
