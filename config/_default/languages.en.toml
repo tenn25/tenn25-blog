@@ -1,0 +1,3 @@
+# 英語は無効化（日本語単一サイト）
+disabled = true
+weight = 2

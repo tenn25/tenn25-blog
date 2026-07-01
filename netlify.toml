@@ -1,5 +1,15 @@
 [build]
   publish = "public"
-  command = "npm run build"
+  command = "hugo --gc --minify"
+
 [build.environment]
-  YARN_FLAGS = "--no-ignore-optional"
+  HUGO_VERSION = "0.163.3"
+  HUGO_ENV = "production"
+  TZ = "Asia/Tokyo"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"

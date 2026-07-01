@@ -1,0 +1,36 @@
+/* =========================================================
+   トップ背景（Blowfish 公式デモと同一のライン背景を再現）
+   デモの /img/background.svg（45度・round・3色・SMIL 5s/10s/10.33s）を
+   インラインで使用し、モード別フロストで濃さを調整する。
+   ライトは強めに、ダークは弱めにフロストして目立ち具合を揃える。
+   固定背景を透けさせるため body の不透明背景は html に退避。
+   ========================================================= */
+html { background-color: rgb(var(--color-neutral)); }
+html.dark { background-color: rgb(var(--color-neutral-800)); }
+body { background-color: transparent !important; }
+
+.bf-animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.bf-animated-bg > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* デモと同じ「すりガラス」オーバーレイ。モードで濃さを変える */
+.bf-frost {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+}
+/* ライト: 白 77% で少し背景に沈める */
+html:not(.dark) .bf-frost { background-color: rgba(241, 245, 249, 0.77); }
+/* ダーク: 紺 58% で線を暗めに沈める */
+html.dark .bf-frost { background-color: rgba(30, 41, 59, 0.58); }

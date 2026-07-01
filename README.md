@@ -1,69 +1,53 @@
-# Gatsby 2 Power blog starter with Typescript
+# tenn25 blog
 
-I constantly update this theme as this is my main website theme
+ITエンジニア兼ボードゲーム製作者 **tenn25** の個人ブログ。
+[Hugo](https://gohugo.io/) + [Blowfish](https://blowfish.page/) 製。
 
-### Description
+🌐 https://tenn25.com
 
-This is a standard starter with Typescript, TSLint, StyleLint, Prettier, Lint-Staged(Husky), Sass, StyleComponent, PWA
+## 開発
 
-### new project
+```bash
+# 依存: hugo extended (0.163+)
+brew install hugo
 
+# 初回クローン時はテーマ(submodule)を取得
+git submodule update --init --recursive
+
+# ローカルサーバ（下書き含む）
+hugo server -D
+
+# 本番ビルド
+hugo --gc --minify
 ```
-gatsby new my_blog https://github.com/mhadaily/gatsby-starter-typescript-power-blog
+
+## 記事を書く
+
+`content/blog/` に Markdown を追加するだけ。frontmatter 例:
+
+```yaml
+---
+title: "記事タイトル"
+date: 2026-07-02T10:00:00+09:00
+slug: "custom-url-slug"   # /blog/<slug>/ になる。省略時はファイル名から生成
+categories: ["boardgame"] # または ["others"] など
+tags: ["ボードゲーム", "制作記"]
+---
 ```
 
-## Success Stories
+- 画像は `static/img/` に置き、本文から `/img/xxx.png` で参照
+- 公開URLは `/blog/<slug>/`（既存記事は旧URLを維持）
 
-- I am using this template for my website <https://www.majidhajian.com>
+## デプロイ
 
-### Features
+`master` への push で Netlify が `hugo --gc --minify` を実行し公開（独自ドメイン `tenn25.com` / CNAME）。
 
-- Mobile-First approach in development.
-- Styled Component implementation
-- SCSS Ready (if neccessary)
-- Themable ready (Light/Dark or even more)
-- TSLint & Prettier
-- a11y lint rules
-- very optimized images by Gatsby Image
-- Purge CSS
-- Offline support
-- Category and Tag for post
-- Type Safe by TypeScript
-- Format Safe by TSLint, StyleLint and Prettier with Lint-Staged(Husky) (Git Hooks)
-- Blog page
-- Syntax highlighting in code blocks.
-- Pagination Ready
-- Ready to deploy to Github pages
-- Automatic RSS generation.
-- Automatic Sitemap generation.
-- Automatic support for Google Tag Manager
-- Netlify deploy ready
+## 構成
 
-#### Desktop
-
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/desktop.png">
-
-#### Dark Mode
-
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/desktop-dark.png">
-
-#### Mobile
-
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/mobile.png" width="300px">
-
-### Keywords
-
-- PWA
-- Blog
-- Personal website
-- TypeScript
-- TSLint
-- Progressive web app
-- StyleLint
-- Prettier
-- Lint-Staged
-- Styling:SCSS
-- Prisim.js
-- Style Components
-- Markdown
-- Pagination
+| パス | 役割 |
+| ---- | ---- |
+| `content/blog/` | 記事(Markdown) |
+| `static/img/` | 記事内画像 |
+| `assets/img/icon.jpg` | プロフィール画像 |
+| `config/_default/` | サイト設定(hugo/params/languages/menus) |
+| `themes/blowfish/` | テーマ(git submodule) |

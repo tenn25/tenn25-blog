@@ -1,0 +1,52 @@
+# -- テーマ外観 --
+colorScheme = "blowfish"        # デモサイト既定のクリーンなteal系。他: fire/forest/ocean/neon など
+defaultAppearance = "light"       # 明るいライト基調（デモの白背景の質感）
+autoSwitchAppearance = false       # OSがダークでも既定はライト（右上トグルで切替可）
+
+enableSearch = true
+enableCodeCopy = true
+
+mainSections = ["blog"]
+
+[header]
+  layout = "fixed"    # demo と同じ追従ヘッダー
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+# -- トップ = プロフィール型（IT × ボードゲームの両面紹介 + 最新記事） --
+[homepage]
+  layout = "profile"
+  showRecent = true
+  showRecentItems = 6
+  showMoreLink = true
+  showMoreLinkDest = "/blog/"
+  cardView = true
+
+[article]
+  showDate = true
+  showAuthor = true
+  showBreadcrumbs = true
+  showDraftLabel = false
+  showEdit = false
+  showHeadingAnchors = true
+  showPagination = true
+  showReadingTime = true
+  showTableOfContents = true
+  showTaxonomies = true
+  showWordCount = false
+  showComments = false
+
+[list]
+  showBreadcrumbs = false
+  showSummary = true
+  showTableOfContents = false
+  groupByYear = true
+  cardView = true
+
+[taxonomy]
+  showTermCount = true

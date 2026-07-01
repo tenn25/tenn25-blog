@@ -1,0 +1,15 @@
+{{ define "main" }}
+  {{/* トップだけに表示する背景（Blowfish 公式デモと同一のライン背景 + モード別フロスト） */}}
+  {{ with resources.Get "svg/bg-lines.svg" }}
+    <div class="bf-animated-bg" aria-hidden="true">
+      {{ .Content | safeHTML }}
+      <div class="bf-frost"></div>
+    </div>
+  {{ end }}
+  {{ $partial := print "home/" .Site.Params.homepage.layout ".html" }}
+  {{ if templates.Exists ( printf "partials/%s" $partial ) }}
+    {{ partial $partial . }}
+  {{ else }}
+    {{ partial "home/profile.html" . }}
+  {{ end }}
+{{ end }}

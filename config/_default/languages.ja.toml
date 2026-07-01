@@ -1,0 +1,23 @@
+disabled = false
+locale = "ja_JP"
+label = "日本語"
+weight = 1
+title = "tenn25 blog"
+
+[params]
+  displayName = "JA"
+  isoCode = "ja"
+  rtl = false
+  dateFormat = "2006-01-02"
+  description = "ITエンジニア兼ボードゲーム製作者 tenn25 の個人ブログ"
+
+  [params.author]
+    name = "tenn25"
+    image = "img/icon.jpg"
+    imageQuality = 96
+    headline = "🖥️ ITエンジニア　×　🎲 ボードゲーム製作者"
+    bio = "技術メモとボードゲーム制作の記録を綴る個人ブログ"
+    links = [
+      { x-twitter = "https://twitter.com/tenn_25" },
+      { github = "https://github.com/tenn25" },
+    ]

@@ -1,0 +1,21 @@
+theme = "blowfish"
+baseURL = "https://tenn25.com/"
+defaultContentLanguage = "ja"
+enableRobotsTXT = false        # static/robots.txt を使用
+enableEmoji = true
+summaryLength = 0
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5

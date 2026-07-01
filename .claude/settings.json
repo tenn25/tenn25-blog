@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e 'const fs=require\\(\"fs\"\\);let s=fs.readFileSync\\(\"assets/svg/bg-lines.svg\",\"utf8\"\\);s=s.replace\\(/stroke-width=\"15\"/g,\"stroke-width=\\\\\"30\\\\\"\"\\);fs.writeFileSync\\(\"assets/svg/bg-lines.svg\",s\\);console.log\\(\"stroke-width 30 count:\",\\(s.match\\(/stroke-width=\"30\"/g\\)||[]\\).length\\);')",
+      "Bash(node -e ' *)"
+    ]
+  }
+}
