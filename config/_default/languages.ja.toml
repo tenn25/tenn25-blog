@@ -20,4 +20,5 @@ title = "tenn25 blog"
     links = [
       { x-twitter = "https://twitter.com/tenn_25" },
       { github = "https://github.com/tenn25" },
+      { link = "https://rock-and-games.com" },
     ]
