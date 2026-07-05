@@ -1,0 +1,18 @@
+# push 後の保険: 全履歴を gitleaks でスキャンする
+# (ローカルの pre-commit フックが第一防衛線。これは web UI 編集やフック未設定クローンの取りこぼし対策)
+name: gitleaks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

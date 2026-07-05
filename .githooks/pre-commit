@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# gitleaks でステージ済みの変更をスキャンし、秘密情報を検知したらコミットをブロックする。
+# 有効化(クローンごとに1回): git config core.hooksPath .githooks
+set -uo pipefail
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "[pre-commit] gitleaks が見つかりません。brew install gitleaks で導入してください" >&2
+  exit 1
+fi
+
+# 個人 NG ワード入りのローカル設定(git 管理外)があればそちらを優先
+config=".gitleaks.toml"
+[ -f ".gitleaks.local.toml" ] && config=".gitleaks.local.toml"
+
+exec gitleaks git --pre-commit --staged --redact --verbose --config "$config"

@@ -38,6 +38,23 @@ tags: ["ボードゲーム", "制作記"]
 - 画像は `static/img/` に置き、本文から `/img/xxx.png` で参照
 - 公開URLは `/blog/<slug>/`（既存記事は旧URLを維持）
 
+## 機密情報スキャン (gitleaks)
+
+コミット前に [gitleaks](https://github.com/gitleaks/gitleaks) が秘密情報(APIキー等)を検知し、コミットをブロックする。
+
+```bash
+# 1. gitleaks を導入
+brew install gitleaks
+
+# 2. pre-commit フックを有効化(クローンごとに1回)
+git config core.hooksPath .githooks
+```
+
+- ルール定義は `.gitleaks.toml`(組み込みルール150+を継承。テーマ submodule と `public/` は除外)
+- 公開できない個人 NG ワード(メールアドレス・社名等)は `.gitleaks.local.toml`(git 管理外)に定義すると、フックがそちらを優先して読み込む
+- push 後の保険として GitHub Actions(`.github/workflows/gitleaks.yml`)でも全履歴をスキャン
+- 手動スキャン: `gitleaks dir -c .gitleaks.local.toml`(作業ツリー) / `gitleaks git -c .gitleaks.local.toml`(全履歴)
+
 ## デプロイ
 
 `master` への push で Netlify が `hugo --gc --minify` を実行し公開（独自ドメイン `tenn25.com` / CNAME）。

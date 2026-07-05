@@ -3,6 +3,9 @@ public/
 resources/_gen/
 .hugo_build.lock
 
+# gitleaks (個人NGワード定義は公開しない)
+.gitleaks.local.toml
+
 # OS / editor
 .DS_Store
 *.log

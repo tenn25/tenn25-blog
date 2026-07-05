@@ -1,0 +1,23 @@
+# gitleaks 設定 (https://github.com/gitleaks/gitleaks)
+# 組み込みルール(既知の API キー・トークン形式 150+)をそのまま継承する。
+#
+# 公開リポジトリに書けない個人 NG ワード(メールアドレス・社名など)は
+# .gitleaks.local.toml (git 管理外) に定義する。pre-commit フック
+# (.githooks/pre-commit) はローカル設定があればそちらを優先して読み込む。
+title = "tenn25-blog gitleaks config"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "テーマ(submodule)のサンプルドキュメントとビルド出力はスキャン対象外"
+paths = [
+  '''themes/blowfish/''',
+  '''public/''',
+  '''resources/_gen/''',
+]
+
+# 誤検知を許可したい場合は同様に [[allowlists]] を追加する。例:
+# [[allowlists]]
+# description = "記事内のダミーキー"
+# paths = ['''content/blog/example\.md''']
